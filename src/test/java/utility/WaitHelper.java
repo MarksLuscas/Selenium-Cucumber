@@ -10,14 +10,11 @@ import java.time.Duration;
 
 public class WaitHelper {
 
-    private WebDriver driver;
     private WebDriverWait wait;
 
     public WaitHelper(WebDriver driver) {
-        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Configuração padrão de 10 segundos
     }
-
 
     // Espera um elemento ser visível
     public WebElement waitForElementToBeVisible(By by) {

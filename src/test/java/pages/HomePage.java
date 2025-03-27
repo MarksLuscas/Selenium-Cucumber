@@ -1,16 +1,19 @@
 package pages;
 
-
-import org.junit.Assert;
 import utility.Actions;
-import utility.BrowserDriver;
+import utility.TestContext;
+
 
 public class HomePage  {
 
-    private Actions actions = new Actions();
+    private Actions actions;
 
-    public void que_estou_na_tela_inicial(){
-        actions.validarPagina();
+    public HomePage(TestContext testContext) {
+        this.actions = new Actions(testContext); // Passa o TestContext para Actions
+    }
+
+    public void que_estou_na_tela_inicial(String titulo){
+        actions.validarPaginaInicial(titulo);
     }
 
     public void clico_em_Efetuar_Login() {

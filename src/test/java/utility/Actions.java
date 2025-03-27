@@ -1,29 +1,38 @@
 package utility;
 
 import Elements.HomeElements;
+import Elements.SenhaErradaElements;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-import static utility.BrowserDriver.getDriver;
-
-public class Actions{
+public class Actions {
 
     private HomeElements homeElements = new HomeElements();
+    private SenhaErradaElements senhaErradaElements = new SenhaErradaElements();
     private WaitHelper waitHelper;
+    private TestContext context;
+    private WebDriver driver;
 
-    public Actions() {
-        // Inicializa o WaitHelper usando o driver atual
-        WebDriver driver = getDriver();
+    public Actions(TestContext context) {
+        this.context = context;
+        this.driver = context.getDriver();
         this.waitHelper = new WaitHelper(driver);
     }
 
-    public void validarPagina(){
-        waitHelper.waitForElementToBeClickable(homeElements.botaoFecharBanner).click();
-       Assert.assertEquals("LigaMagic: Aqui você negocia e se informa sobre Magic: The Gathering", getDriver().getTitle());
+    public void validarPaginaSenhaErrada(String titulo) {
+        Assert.assertEquals(titulo, context.getDriver().getTitle());
     }
 
-    public void clicarBotaoLoginHome(){
+    public void validarPaginaInicial(String titulo) {
+        WebElement botaoFechar = waitHelper.waitForElementToBeClickable(homeElements.botaoFecharBanner);
+        if (botaoFechar.isDisplayed()) {
+            botaoFechar.click();
+        }
+        Assert.assertEquals(titulo, context.getDriver().getTitle());
+    }
+
+    public void clicarBotaoLoginHome() {
         waitHelper.waitForElementToBeClickable(homeElements.botaoLoginHome).click();
     }
 
@@ -38,6 +47,12 @@ public class Actions{
 
     public void validarLogado(String nick) {
         waitHelper.waitForUrlToBe("https://www.ligamagic.com.br/?view=");
-      Assert.assertEquals(nick, waitHelper.waitForElementToBeVisible(homeElements.nick).getText());
+        WebElement nickElement = waitHelper.waitForElementToBeVisible(homeElements.nick);
+        Assert.assertEquals(nick, nickElement.getText());
+        Assert.assertTrue(nickElement.isDisplayed());
+    }
+
+    public void validaMensagemDadosErrados() {
+        Assert.assertTrue(waitHelper.waitForElementToBeVisible(senhaErradaElements.mensagemDadosErrados).isDisplayed());
     }
 }
