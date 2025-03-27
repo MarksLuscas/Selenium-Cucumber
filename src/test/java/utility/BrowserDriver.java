@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserDriver {
 
 
     private static WebDriver driver;
-
     public static WebDriver getDriver() {
         if (driver == null) {
             switch (PropriedadesBrowser.BROWSER) {

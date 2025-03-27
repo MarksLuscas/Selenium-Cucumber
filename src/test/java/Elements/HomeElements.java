@@ -6,5 +6,6 @@ import utility.BrowserDriver;
 
 public class HomeElements extends BrowserDriver {
 
-    public static WebElement botaoLoginHome = getDriver().findElement(By.xpath("//button[.='Efetuar login']"));
+    public static By botaoLoginHome = By.xpath("//button[.='Efetuar login']");
+    public static By botaoFecharBanner = By.id("campanha-del-1");
 }
