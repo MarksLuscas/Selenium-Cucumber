@@ -35,4 +35,9 @@ public class Actions{
     public void clicarBotaoLogar() {
         waitHelper.waitForElementToBeClickable(homeElements.botaoLogar).click();
     }
+
+    public void validarLogado(String nick) {
+        waitHelper.waitForUrlToBe("https://www.ligamagic.com.br/?view=");
+      Assert.assertEquals(nick, waitHelper.waitForElementToBeVisible(homeElements.nick).getText());
+    }
 }

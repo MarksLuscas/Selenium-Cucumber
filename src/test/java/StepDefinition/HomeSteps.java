@@ -2,6 +2,7 @@ package StepDefinition;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import pages.HomePage;
 
@@ -25,9 +26,10 @@ public class HomeSteps {
         homePage.preencher_os_dados_de_email_e_senha(email, senha);
 
     }
-//
-//    @Então("Me verei logado na tela inicial novamente")
-//    public void me_verei_logado_na_tela_inicial_novamente(){
-//
-//    }
+
+    @Então("Verei meu nick na tela inicial {string}")
+    public void verei_meu_nick_na_tela_inicial(String nick){
+        homePage.verei_meu_nick_na_tela_inicial(nick);
+
+    }
 }

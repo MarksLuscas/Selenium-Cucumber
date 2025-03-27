@@ -21,4 +21,8 @@ public class HomePage  {
         actions.preencherDadosLogin(email, senha);
         actions.clicarBotaoLogar();
     }
+
+    public void verei_meu_nick_na_tela_inicial(String nick) {
+        actions.validarLogado(nick);
+    }
 }
