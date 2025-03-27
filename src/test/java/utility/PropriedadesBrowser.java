@@ -1,12 +1,13 @@
 package utility;
 
-public class Propriedades {
+public class PropriedadesBrowser {
 
     public static boolean FECHAR_BROWSER = true;
     public static Browser BROWSER = Browser.FIREFOX;
 
     public enum Browser{
         CHROME,
-        FIREFOX
+        FIREFOX,
+        OPERA
     }
 }

@@ -1,13 +1,13 @@
-package StepDefinition;
+package runner;
 
-import cucumber.api.junit.Cucumber;
-import cucumber.api.CucumberOptions;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
             features="src/test/java/features",
-            glue={"src/test/java/StepDefinition", "src/test/java/utility"})
+            glue={"StepDefinition", "utility"})
 public class TestRunner{
 
 }
