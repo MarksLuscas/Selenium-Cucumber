@@ -24,6 +24,15 @@ public class Actions{
     }
 
     public void clicarBotaoLoginHome(){
-        getDriver().findElement(homeElements.botaoLoginHome).click();
+        waitHelper.waitForElementToBeClickable(homeElements.botaoLoginHome).click();
+    }
+
+    public void preencherDadosLogin(String email, String senha) {
+        waitHelper.waitForElementToBeClickable(homeElements.campoEmail).sendKeys(email);
+        waitHelper.waitForElementToBeClickable(homeElements.campoSenha).sendKeys(senha);
+    }
+
+    public void clicarBotaoLogar() {
+        waitHelper.waitForElementToBeClickable(homeElements.botaoLogar).click();
     }
 }

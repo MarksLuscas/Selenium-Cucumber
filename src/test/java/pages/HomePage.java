@@ -16,4 +16,9 @@ public class HomePage  {
     public void clico_em_Efetuar_Login() {
         actions.clicarBotaoLoginHome();
     }
+
+    public void preencher_os_dados_de_email_e_senha(String email, String senha) {
+        actions.preencherDadosLogin(email, senha);
+        actions.clicarBotaoLogar();
+    }
 }

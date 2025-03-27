@@ -8,4 +8,7 @@ public class HomeElements extends BrowserDriver {
 
     public static By botaoLoginHome = By.xpath("//button[.='Efetuar login']");
     public static By botaoFecharBanner = By.id("campanha-del-1");
+    public static By campoEmail = By.xpath("//input[@placeholder='Login ou E-Mail']");
+    public static By campoSenha = By.xpath("//input[@placeholder='Senha']");
+    public static By botaoLogar = By.linkText("Logar");
 }

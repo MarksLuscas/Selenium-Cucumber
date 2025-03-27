@@ -12,9 +12,9 @@ public class Hooks {
         BrowserDriver.getDriver().get("https://www.ligamagic.com.br/?view="); // Inicializa e acessa a URL base
     }
 
-//    // Hook executado após cada cenário
-//    @After
-//    public void tearDown() {
-//        BrowserDriver.quitDriver(); // Encerra o WebDriver
-//    }
+    // Hook executado após cada cenário
+    @After
+    public void tearDown() {
+        BrowserDriver.quitDriver(); // Encerra o WebDriver
+    }
 }

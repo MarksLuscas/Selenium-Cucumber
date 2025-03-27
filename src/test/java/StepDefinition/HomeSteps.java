@@ -2,6 +2,7 @@ package StepDefinition;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Quando;
 import pages.HomePage;
 
 public class HomeSteps {
@@ -19,10 +20,11 @@ public class HomeSteps {
 
     }
 
-//    @Quando("Preencher os dados de email e senha")
-//    public void preencher_os_dados_de_email_e_senha(){
-//
-//    }
+    @Quando("Preencher os dados de email e senha {string} {string}")
+    public void preencher_os_dados_de_email_e_senha(String email, String senha){
+        homePage.preencher_os_dados_de_email_e_senha(email, senha);
+
+    }
 //
 //    @Então("Me verei logado na tela inicial novamente")
 //    public void me_verei_logado_na_tela_inicial_novamente(){
