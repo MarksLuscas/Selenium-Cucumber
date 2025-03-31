@@ -42,4 +42,8 @@ public class HomeSteps {
         homePage.preencher_os_dados_de_email_e_senha(email, senha);
     }
 
+    @E("Seleciono a opcao de Criar meu Cadastro")
+    public void seleciono_a_opcao_de_criar_meu_cadastro() {
+        homePage.escolhoAOpcaoCriarMeuCadastro();
+    }
 }

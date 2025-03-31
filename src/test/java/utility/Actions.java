@@ -1,5 +1,6 @@
 package utility;
 
+import Elements.CadastroElements;
 import Elements.HomeElements;
 import Elements.SenhaErradaElements;
 import org.junit.Assert;
@@ -13,6 +14,7 @@ public class Actions {
     private WaitHelper waitHelper;
     private TestContext context;
     private WebDriver driver;
+    private CadastroElements cadastroElements = new CadastroElements();
 
     public Actions(TestContext context) {
         this.context = context;
@@ -54,5 +56,13 @@ public class Actions {
 
     public void validaMensagemDadosErrados() {
         Assert.assertTrue(waitHelper.waitForElementToBeVisible(senhaErradaElements.mensagemDadosErrados).isDisplayed());
+    }
+
+    public void clicarBotaoCriarMeuCadastro() {
+        waitHelper.waitForElementToBeClickable(homeElements.criarMeuCadastro).click();
+    }
+
+    public void clicarCriarMeuCadastro() {
+        waitHelper.waitForElementToBeClickable(cadastroElements.criarMeuCadastro).click();
     }
 }

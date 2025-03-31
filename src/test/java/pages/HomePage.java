@@ -28,4 +28,8 @@ public class HomePage  {
     public void verei_meu_nick_na_tela_inicial(String nick) {
         actions.validarLogado(nick);
     }
+
+    public void escolhoAOpcaoCriarMeuCadastro() {
+        actions.clicarBotaoCriarMeuCadastro();
+    }
 }
